@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(lldb-mac) Launch",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/main.app",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build with CMake",
+            "args": [],
+            "stopAtEntry": false
+        },
+        {
+            "name": "(lldb-linux) Launch",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/main",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build with CMake",
+            "args": [],
+            "stopAtEntry": false
+        },
+        {
+            "name": "(msvc) Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Debug/main.exe",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build with CMake",
+            "args": [],
+            "stopAtEntry": false
+        }
+    ]
+}
