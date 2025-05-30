@@ -5,9 +5,6 @@ project(test_core LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Include FetchContent module
-include(FetchContent)
-
 # Set wxWidgets version
 set(WXWIDGETS_VERSION "3.2.8")
 
@@ -15,16 +12,7 @@ set(WXWIDGETS_VERSION "3.2.8")
 find_package(wxWidgets QUIET)
 
 if(NOT wxWidgets_FOUND)
-    message(STATUS "wxWidgets not found. Installing wxWidgets...")
-
-    # Fetch wxWidgets
-    FetchContent_Declare(
-        wxWidgets
-        GIT_REPOSITORY https://github.com/wxWidgets/wxWidgets.git
-        GIT_TAG v${WXWIDGETS_VERSION}
-    )
-
-    FetchContent_MakeAvailable(wxWidgets)
+    message(STATUS "wxWidgets not found. Add wxwidgets to ENVIRONMENT VARIABLE")
 
     # Set wxWidgets_INCLUDE_DIRS ggand wxWidgets_LIBRARIES after installation
     set(wxWidgets_INCLUDE_DIRS "$(WXWIN)/include")
