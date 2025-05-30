@@ -14,9 +14,13 @@ public:
 
 wxIMPLEMENT_APP(app);
 
-bool OnInit()
+bool app::OnInit()
 {
-    window *mainWindow = new window("Template Window");
+    window *mainWindow = new window("Test Window");
     mainWindow->Show(true);
     return true;
+}
+
+window::window(const wxString &title) : wxFrame(NULL, wxID_ANY, title)
+{
 }

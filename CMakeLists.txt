@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 
-project(wx_cmake_template_core LANGUAGES CXX)
+project(test_core LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -26,9 +26,9 @@ if(NOT wxWidgets_FOUND)
 
     FetchContent_MakeAvailable(wxWidgets)
 
-    # Set wxWidgets_INCLUDE_DIRS and wxWidgets_LIBRARIES after installation
-    set(wxWidgets_INCLUDE_DIRS "${wxWidgets_SOURCE_DIR}/include")
-    set(wxWidgets_LIBRARIES "${wxWidgets_BINARY_DIR}/lib/libwx_baseu.a;${wxWidgets_BINARY_DIR}/lib/libwx_gtk3u.a")  # Adjust based on your needs
+    # Set wxWidgets_INCLUDE_DIRS ggand wxWidgets_LIBRARIES after installation
+    set(wxWidgets_INCLUDE_DIRS "$(WXWIN)/include")
+    set(wxWidgets_LIBRARIES "$(WXWIN)/lib/vc_lib;$(WXWIN)/lib/vc_x64_lib")  # Adjust based on your needs
     set(wxWidgets_FOUND TRUE)
 else()
     message(STATUS "wxWidgets found.")
